@@ -23,25 +23,22 @@ def main():
         header_title=header_title,
         header_id=header_id
     )
-    s1 = """
-    Merge is the joining of two data sets into one and aligning the rows
-    based on common columns.
-    """
-    print('</pre>')
-    print(s1)
-    print('<pre style="white-space: pre-wrap;">')
-    df_left = pd.DataFrame(
+    # print('</pre>')
+    # print(s1)
+    # print('<pre style="white-space: pre-wrap;">')
+    df_one = pd.DataFrame(
         {
             'id': [1, 2, 3, 4, 5],
             'age': [134, 28, np.NaN, 29, 17],
             'ctg': ['A', 'A', 'B', 'C', None]
         }
     ).astype({'age': 'Int64'})
-    print('df_left')
+    print('df_one')
+    print("- has unique values in 'id'")
     print()
     print(
         tabulate(
-            df_left,
+            df_one,
             headers='keys',
             tablefmt='html',
             numalign="right",
@@ -49,18 +46,19 @@ def main():
         )
     )
     print()
-    df_right = pd.DataFrame(
+    df_two = pd.DataFrame(
         {
-            'id': [3, 4, 5, 6, 7],
-            'ticket': [1001, 1002, 1003, 1004, 1005],
-            'amount': [24.1, np.NaN, 34.5, 19.5, 26.2]
+            'id': [3, 4, 5, 6, 7, 4, 4],
+            'ticket': [1001, 1002, 1003, 1004, 1005, 1006, 1007],
+            'amount': [24.1, np.NaN, 34.5, 19.5, 26.2, 27.3, np.NaN]
         }
     )
-    print('df_right')
+    print('df_two')
+    print("- has multiple values in 'id'")
     print()
     print(
         tabulate(
-            df_right,
+            df_two,
             headers='keys',
             tablefmt='html',
             numalign="right",
@@ -70,13 +68,13 @@ def main():
     print()
     # left merge
     # fill_values = {'age': np.NaN, 'ticket': np.NaN}
-    df = df_left.merge(
-        right=df_right,
+    df_one_two = df_one.merge(
+        right=df_two,
         how='left',
         left_on=['id'],
         right_on=['id'],
         indicator=True,
-        validate='one_to_one'
+        validate='one_to_many'
     ).astype(
         dtype={
             'age': 'Int64',
@@ -85,15 +83,15 @@ def main():
     # ).fillna(value=fill_values)
     )
     ds.save_file(
-        df=df,
+        df=df_one_two,
         file_name='justatest.csv'
     )
-    print('left merge')
+    print('df_one -> df_two is a one-to-many left merge')
     print()
     # print(df)
     print(
         tabulate(
-            df,
+            df_one_two,
             headers='keys',
             tablefmt='html',
             numalign="right",
