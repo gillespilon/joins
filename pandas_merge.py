@@ -36,10 +36,18 @@ def main():
             'age': [134, 28, np.NaN, 29, 17],
             'ctg': ['A', 'A', 'B', 'C', 'B']
         }
-    )
+    ).astype({'age': 'Int64'})
     print('df_left')
     print()
-    print(df_left.to_string(index=False))
+    print(
+        tabulate(
+            df_left,
+            headers='keys',
+            tablefmt='html',
+            numalign="right",
+            stralign="right"
+        )
+    )
     print()
     df_right = pd.DataFrame(
         {
@@ -50,7 +58,15 @@ def main():
     )
     print('df_right')
     print()
-    print(df_right)
+    print(
+        tabulate(
+            df_right,
+            headers='keys',
+            tablefmt='html',
+            numalign="right",
+            stralign="right"
+        )
+    )
     print()
     # left merge
     # fill_values = {'age': np.NaN, 'ticket': np.NaN}
