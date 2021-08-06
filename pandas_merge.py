@@ -34,7 +34,7 @@ def main():
         {
             'id': [1, 2, 3, 4, 5],
             'age': [134, 28, np.NaN, 29, 17],
-            'ctg': ['A', 'A', 'B', 'C', 'B']
+            'ctg': ['A', 'A', 'B', 'C', None]
         }
     ).astype({'age': 'Int64'})
     print('df_left')
