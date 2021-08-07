@@ -35,7 +35,7 @@ def main():
     # df_one has unique values in 'id'
     print(
         tabulate(
-            df_one,
+            tabular_data=df_one,
             headers='keys',
             tablefmt='html',
             numalign='right',
@@ -55,7 +55,7 @@ def main():
     # df_two has multiple values in 'id'
     print(
         tabulate(
-            df_two,
+            tabular_data=df_two,
             headers='keys',
             tablefmt='html',
             numalign='right',
@@ -75,7 +75,7 @@ def main():
     # df_three has multiple values in 'id'
     print(
         tabulate(
-            df_three,
+            tabular_data=df_three,
             headers='keys',
             tablefmt='html',
             numalign='right',
@@ -105,7 +105,7 @@ def main():
     # df_one_two = df_one <- df_two is a one-to-many left merge
     print(
         tabulate(
-            df_one_two,
+            tabular_data=df_one_two,
             headers='keys',
             tablefmt='html',
             numalign='right',
@@ -131,7 +131,7 @@ def main():
     df_one_two_three.index.name = 'rows'
     print(
         tabulate(
-            df_one_two_three,
+            tabular_data=df_one_two_three,
             headers='keys',
             tablefmt='html',
             numalign='right',
@@ -149,7 +149,7 @@ def main():
         )
     print(
         tabulate(
-            df_one_two_three,
+            tabular_data=df_one_two_three,
             headers='keys',
             tablefmt='html',
             numalign='right',
@@ -166,7 +166,7 @@ def main():
     )
     print(
         tabulate(
-            df_one_two_three,
+            tabular_data=df_one_two_three,
             headers='keys',
             tablefmt='html',
             numalign='right',
