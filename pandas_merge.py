@@ -37,7 +37,7 @@ def main():
         tabulate(
             tabular_data=df_one,
             headers='keys',
-            tablefmt='html',
+            tablefmt='tsv',
             numalign='right',
             stralign='right',
             floatfmt='.2f'
@@ -57,7 +57,7 @@ def main():
         tabulate(
             tabular_data=df_two,
             headers='keys',
-            tablefmt='html',
+            tablefmt='tsv',
             numalign='right',
             stralign='right',
             floatfmt='.2f'
@@ -77,7 +77,7 @@ def main():
         tabulate(
             tabular_data=df_three,
             headers='keys',
-            tablefmt='html',
+            tablefmt='tsv',
             numalign='right',
             stralign='right',
             floatfmt='.2f'
@@ -107,7 +107,7 @@ def main():
         tabulate(
             tabular_data=df_one_two,
             headers='keys',
-            tablefmt='html',
+            tablefmt='tsv',
             numalign='right',
             stralign='right',
             floatfmt='.2f'
@@ -133,7 +133,7 @@ def main():
         tabulate(
             tabular_data=df_one_two_three,
             headers='keys',
-            tablefmt='html',
+            tablefmt='tsv',
             numalign='right',
             stralign='right',
             floatfmt='.2f'
@@ -151,7 +151,7 @@ def main():
         tabulate(
             tabular_data=df_one_two_three,
             headers='keys',
-            tablefmt='html',
+            tablefmt='tsv',
             numalign='right',
             stralign='right',
             floatfmt='.2f'
@@ -168,7 +168,7 @@ def main():
         tabulate(
             tabular_data=df_one_two_three,
             headers='keys',
-            tablefmt='html',
+            tablefmt='tsv',
             numalign='right',
             stralign='right',
             floatfmt='.2f'
